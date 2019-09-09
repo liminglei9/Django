@@ -21,5 +21,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', view.index),
     path('hello/', view.hello),
-    re_path('^$',view.index)
+    re_path('^$',view.index),
+    path('html/',view.html1),
+    path('moban/',view.mb),
+    # path('moban2',view.mb1),
+    path('moban3/',view.mb2),
+    re_path('muban/(\d{1,3})',view.mb3),
+    path('qxphb/',view.qxphb),
 ]

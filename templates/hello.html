@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>你好我吐了</title>
+    <style>
+        div{
+            background-color: pink;
+            color: blueviolet;
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body>
+    <h1>大家好，我吐了</h1>
+    <div>姓名:{{ name }}</div>
+    <div>年龄:{{ age }}</div>
+    <div>性别:{{ sex }}</div>
+    <div>爱好:{{ hobby }}</div>
+    <div>第一个爱好:{{ hobby.0 }}</div>
+    <div>成绩:{{ score }}</div>
+    <div>数学成绩:{{ score.math }}</div>
+    <div>{{ say.say }}</div>
+{% if age < 18 %}
+    <p>少年</p>
+{% elif age >= 18 and age1 <= 30 %}
+    <p>青年</p>
+{% elif age > 30 and age1 <= 60 %}
+    <p>中年</p>
+{% else %}
+    <p>老年</p>
+{% endif %}
+
+{% for i in hobby %}
+    {% if forloop.first %}
+        <p style="color: deeppink">{{ forloop.counter}}.{{ i }}</p>
+        {% elif forloop.counter == 2 %}
+            <p style="color:blueviolet">{{ forloop.counter}}.{{ i }}</p>
+        {% elif forloop.counter == 3 %}
+            <p style="color:rebeccapurple">{{ forloop.counter}}.{{ i }}</p>
+        {% elif forloop.last %}
+        <p style="color:lawngreen">{{ forloop.counter}}.{{ i }}</p>
+    {% endif %}
+{% endfor %}
+</body>
+</html>

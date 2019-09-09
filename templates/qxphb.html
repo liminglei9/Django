@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RNG</title>
+    <link rel="stylesheet" href="/static/css/1.css">
+</head>
+<body>
+    <a href="/index">返回首页</a>
+    {% for i in rng %}
+        <p><h1>
+        {{ forloop.counter }}.{{ i.name }}
+        </h1></p>
+        <a href="{{ i.url }}" target="_blank">
+        <img src="/static/images/{{ i.img }}" alt="">
+        </a>
+    {% endfor %}
+</body>
+</html>
